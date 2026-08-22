@@ -1,0 +1,69 @@
+@use 'sass:color';
+@import 'variables';
+@import 'mixins';
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  background-color: $bg-primary;
+  color: $text-primary;
+  font-family: $font-sans;
+  min-height: 100vh;
+}
+
+/* Custom Cyber Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: $bg-primary;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $border-color;
+  border-radius: 4px;
+  border: 2px solid $bg-primary;
+
+  &:hover {
+    background: color.adjust($border-color, $lightness: 15%);
+  }
+}
+
+/* Global utility classes */
+.font-mono {
+  font-family: $font-mono;
+}
+
+.developer-grid {
+  @include developer-grid;
+}
+
+.glass-card {
+  @include glass-panel;
+}
+
+.glow-border {
+  border-color: $border-color;
+  transition: border-color $transition-normal, box-shadow $transition-normal;
+  
+  &:hover {
+    border-color: rgba($accent-green, 0.4);
+    box-shadow: 0 0 15px rgba($accent-green, 0.12);
+  }
+}
+
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  &.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

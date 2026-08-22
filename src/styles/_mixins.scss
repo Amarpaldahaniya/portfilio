@@ -1,0 +1,40 @@
+@import 'variables';
+
+@mixin glass-panel {
+  background: rgba(#12151C, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(#242733, 0.8);
+}
+
+@mixin glass-header {
+  background: rgba(#08090D, 0.82);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(#242733, 0.6);
+}
+
+@mixin glow-box($color: $accent-green, $alpha: 0.15) {
+  box-shadow: 0 0 25px rgba($color, $alpha);
+}
+
+@mixin hover-lift {
+  transition: transform $transition-normal, box-shadow $transition-normal, border-color $transition-normal;
+  &:hover {
+    transform: translateY(-4px);
+    border-color: rgba($accent-green, 0.4);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), 0 0 15px rgba($accent-green, 0.1);
+  }
+}
+
+@mixin developer-grid {
+  background-image: linear-gradient(to right, rgba(#242733, 0.3) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(#242733, 0.3) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+@mixin gradient-text($gradient: linear-gradient(135deg, $text-primary 0%, $accent-green 100%)) {
+  background: $gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
