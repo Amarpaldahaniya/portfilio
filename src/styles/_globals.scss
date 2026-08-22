@@ -1,6 +1,6 @@
 @use 'sass:color';
-@import 'variables';
-@import 'mixins';
+@use 'variables' as *;
+@use 'mixins' as *;
 
 html {
   scroll-behavior: smooth;
@@ -50,7 +50,7 @@ body {
 .glow-border {
   border-color: $border-color;
   transition: border-color $transition-normal, box-shadow $transition-normal;
-  
+
   &:hover {
     border-color: rgba($accent-green, 0.4);
     box-shadow: 0 0 15px rgba($accent-green, 0.12);
@@ -61,7 +61,7 @@ body {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  
+
   &.revealed {
     opacity: 1;
     transform: translateY(0);
