@@ -13,7 +13,7 @@ export const PERSONAL_INFO = {
   linkedin: 'https://www.linkedin.com/in/amarpalkumar9971989713/',
   portfolio: 'https://amarpalkumarportfolio.firebaseapp.com',
   github: 'https://github.com',
-  resumeUrl: 'assets/resume/amarpal-resume.pdf',
+  resumeUrl: 'amarpal-resume.pdf',
   stats: {
     itExperience: '8+ Years',
     itExperienceLabel: 'IT Experience',
